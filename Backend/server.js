@@ -2,7 +2,7 @@ const express = require("express");
 const { connection } = require("./config/db");
 const cors = require("cors");
 const { UserRouter } = require("./routes/user.route");
-const { TodosRouter } = require("./routes/todos.route");
+const { EmiRouter } = require("./routes/Emi.route");
 const app = express();
 require("dotenv").config;
 
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", UserRouter);
-app.use("/todos", TodosRouter);
+// app.use("/emi", EmiRouter);
 app.listen(PORT, async () => {
   try {
     await connection;
